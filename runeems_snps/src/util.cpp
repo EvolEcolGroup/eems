@@ -178,7 +178,7 @@ bool isdistmat(const MatrixXd &A) {
   int num_pos_eigen_vals = (eigen_vals > +eps).count();
   int num_zero_eigen_vals = A.rows() - num_neg_eigen_vals - num_pos_eigen_vals;
   check_condition(A_is_nonnegative, "isdistmat : matrix A is negative");
-  check_conditiondiag_is_zeros, "isdistmat : diag of matrix A is not zeroes");
+  check_condition(diag_is_zeros, "isdistmat : diag of matrix A is not zeroes");
   check_condition(A_is_symmetric, "isdistmat : matrix A is not symmetric");
   check_condition((num_pos_eigen_vals == 1), "isdistmat : not one positive eigen value");
   check_condition((num_zero_eigen_vals == 0), "isdistmat : there are eigen values equal to zero");
